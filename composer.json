@@ -1,14 +1,14 @@
 {
-  "name": "ymo/laratables",
+  "name": "patrickcurl/laratables",
   "type": "library",
   "description": "A package to easily transform your Eloquent models into JSON to be used by Datatables 1.10+.",
   "keywords": ["datatables", "laravel", "eloquent"],
-  "homepage": "https://github.com/yuri-moens/laratables",
+  "homepage": "https://github.com/patrickcurl/laratables",
   "license": "MIT",
   "authors": [
     {
-      "name": "Yuri Moens",
-      "email": "yuri.moens@gmail.com"
+      "name": "Patrick Curl",
+      "email": "patrickwcurl@gmail.com"
     }
   ],
   "require": {
