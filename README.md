@@ -1,6 +1,7 @@
 # Laratables
 
-A Laravel package to convert Eloquent queries into JSON output to work with Datatables.
+A Laravel package to convert Eloquent queries into JSON output to work with Datatables. 
+This is a fork of: https://github.com/yuri-moens/laratables to fix some issues, and errors for a production app, feel free to use it, but no warranties expressed.
 
 ## Installation
 
@@ -8,7 +9,7 @@ Add the following to your `composer.json` file.
 
 ```
 require {
-	"ymo/laratables": "~2"
+	"patrickcurl/laratables": "dev-master"
 }
 ```
 
@@ -16,11 +17,11 @@ Run `composer install`.
 
 Open `app/config/app.php` and add:
 
-`'Ymo\Laratables\LaratablesServiceProvider',`
+`Laratables\LaratablesServiceProvider::class,`
 
 Also add the alias:
 
-`'Laratables'      => 'Ymo\Laratables\Facades\LaratablesFacade',`
+`'Laratables'      => Laratables\LaratablesFacade::class,`
 
 And publish the configuration from the command line:
 
