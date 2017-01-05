@@ -1,6 +1,6 @@
 <?php
 
-namespace Ymo\Laratables;
+namespace Laratables;
 
 /**
  * This file is part of Laratables,
