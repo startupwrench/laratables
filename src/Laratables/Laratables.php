@@ -1,6 +1,6 @@
 <?php
 
-namespace Ymo\Laratables;
+namespace Laratables;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
