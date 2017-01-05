@@ -6,7 +6,7 @@ namespace Startupwrench\Laratables;
  * This file is part of Laratables,
  * a helper for generating Datatables 1.10+ usable JSON from Eloquent models.
  *
- * @package Ymo\Laratables
+ * @package Startupwrench\Laratables
  *
  * @license MIT
  */
@@ -41,7 +41,7 @@ class LaratablesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('laratables', function ($app) {
-            return $app->make('Ymo\Laratables\Laratables');
+            return $app->make('Startupwrench\Laratables\Laratables');
         });
 
         $this->mergeConfigFrom(

@@ -4,10 +4,10 @@
  * This file is part of Laratables,
  * a helper for generating Datatables 1.10+ usable JSON from Eloquent models.
  *
+ * @package Startupwrench\Laratables
+ *
  * @license MIT
- * @package Ymo\Laratables
  */
-
 return [
-    'defaultLength' => 10,
+    'defaultLength' => 10
 ];

@@ -177,7 +177,7 @@ class Laratables
      * Add a relationship count condition to the query with where clauses.
      *
      * @param  string                                         $relation
-     * @param  callable|\Ymo\Laratables\Closure               $callback
+     * @param  callable|\Startupwrench\Laratables\Closure     $callback
      * @param  string                                         $operator
      * @param  int                                            $count
      * @param  string                                         $boolean
