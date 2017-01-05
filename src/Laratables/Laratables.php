@@ -5,8 +5,8 @@ namespace Laratables;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Ymo\Laratables\Columns\DataColumn;
-use Ymo\Laratables\Columns\RawColumn;
+use Laratables\Columns\DataColumn;
+use Laratables\Columns\RawColumn;
 
 /**
  * This file is part of Laratables,
