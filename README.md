@@ -1,7 +1,7 @@
 # Laratables
 
 A Laravel package to convert Eloquent queries into JSON output to work with Datatables. 
-This is a fork of: https://github.com/yuri-moens/laratables to fix some issues, and errors for a production app, feel free to use it, but no warranties expressed.
+This is a fork of: https://github.com/yuri-moens/laratables to fix some issues, and errors for a production app, feel free to use it, but no warranties expressed or implied.
 
 ## Installation
 
