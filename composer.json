@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Ymo\\Laratables\\": "src/Laratables/"
+      "Startupwrench\\Laratables\\": "src/Laratables/"
     }
   },
   "minimum-stability": "dev"

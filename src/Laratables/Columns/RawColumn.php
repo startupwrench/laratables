@@ -1,15 +1,15 @@
 <?php
 
-namespace Laratables\Columns;
+namespace Startupwrench\Laratables\Columns;
 
 /**
  * This file is part of Laratables,
  * a helper for generating Datatables 1.10+ usable JSON from Eloquent models.
  *
+ * @package Startupwrench\Laratables
+ *
  * @license MIT
- * @package Ymo\Laratables
  */
-
 class RawColumn extends BaseColumn
 {
     /**
@@ -34,7 +34,7 @@ class RawColumn extends BaseColumn
     /**
      * Parse the given record.
      *
-     * @param $record
+     * @param  $record
      * @return mixed
      */
     public function parse($record)

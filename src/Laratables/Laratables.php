@@ -1,21 +1,21 @@
 <?php
 
-namespace Laratables;
+namespace Startupwrench\Laratables;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Laratables\Columns\DataColumn;
-use Laratables\Columns\RawColumn;
+use Startupwrench\Laratables\Columns\DataColumn;
+use Startupwrench\Laratables\Columns\RawColumn;
 
 /**
  * This file is part of Laratables,
  * a helper for generating Datatables 1.10+ usable JSON from Eloquent models.
  *
+ * @package Startupwrench\Laratables
+ *
  * @license MIT
- * @package Ymo\Laratables
  */
-
 class Laratables
 {
     /**
@@ -57,7 +57,7 @@ class Laratables
      * Create a Laratables request.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request                $request
      */
     public function __construct(Repository $config, Request $request)
     {
@@ -68,7 +68,7 @@ class Laratables
     /**
      * Set the model.
      *
-     * @param $model
+     * @param  $model
      * @return $this
      */
     public function model($model)
@@ -104,7 +104,7 @@ class Laratables
     /**
      * Set the columns to be returned.
      *
-     * @param $columns
+     * @param  $columns
      * @return $this
      */
     public function columns($columns)
@@ -128,8 +128,8 @@ class Laratables
     /**
      * Add a column with raw content.
      *
-     * @param $name
-     * @param $content
+     * @param  $name
+     * @param  $content
      * @return $this
      */
     public function addRawColumn($name, $content)
@@ -142,8 +142,8 @@ class Laratables
     /**
      * Wrap HTML around the content of the column fields.
      *
-     * @param $columnName
-     * @param $html
+     * @param  $columnName
+     * @param  $html
      * @return $this
      */
     public function wrapHtml($columnName, $html)
@@ -160,10 +160,10 @@ class Laratables
     /**
      * Add a basic where clause to the query.
      *
-     * @param $column
-     * @param null $operator
-     * @param null $value
-     * @param string $boolean
+     * @param  $column
+     * @param  null      $operator
+     * @param  null      $value
+     * @param  string    $boolean
      * @return $this
      */
     public function where($column, $operator = null, $value = null, $boolean = 'and')
@@ -176,11 +176,11 @@ class Laratables
     /**
      * Add a relationship count condition to the query with where clauses.
      *
-     * @param  string $relation
-     * @param callable|\Ymo\Laratables\Closure $callback
-     * @param  string $operator
-     * @param  int $count
-     * @param string $boolean
+     * @param  string                                         $relation
+     * @param  callable|\Ymo\Laratables\Closure               $callback
+     * @param  string                                         $operator
+     * @param  int                                            $count
+     * @param  string                                         $boolean
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function whereHas($relation, Closure $callback, $operator = '>=', $count = 1, $boolean = 'and')
@@ -228,10 +228,10 @@ class Laratables
         $this->sort();
 
         $output = [
-            'draw' => intval($this->request->get("draw")),
-            'recordsTotal' => $recordsTotal,
+            'draw'            => intval($this->request->get("draw")),
+            'recordsTotal'    => $recordsTotal,
             'recordsFiltered' => $recordsFiltered,
-            'data' => $this->parse(),
+            'data'            => $this->parse()
         ];
 
         return \Response::json($output);
@@ -272,10 +272,10 @@ class Laratables
      */
     protected function paginate()
     {
-        if (! is_null($this->request->get('start'))) {
+        if (!is_null($this->request->get('start'))) {
             $this->query()
-                ->skip($this->request->get('start'))
-                ->take($this->request->get('length', $this->config->get('laratables.defaultLength')));
+                 ->skip($this->request->get('start'))
+                 ->take($this->request->get('length', $this->config->get('laratables.defaultLength')));
         }
     }
 
@@ -308,8 +308,8 @@ class Laratables
     /**
      * Parse variables in HTML.
      *
-     * @param $field
-     * @param \Illuminate\Database\Eloquent\Model $record
+     * @param  $field
+     * @param  \Illuminate\Database\Eloquent\Model $record
      * @return string
      */
     protected function parseHtml($field, Model $record)
@@ -341,10 +341,10 @@ class Laratables
      */
     protected function sort()
     {
-        if(!empty($this->request->get("order"))){
+        if (!empty($this->request->get("order"))) {
             $column = $this->columns[$this->request->get("order")[0]["column"]];
             $direction = $this->request->get("order")[0]["dir"];
-        
+
             if ($column->orderable) {
                 $this->query()->orderBy($column->name, $direction);
             }
