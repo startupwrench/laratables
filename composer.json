@@ -1,9 +1,9 @@
 {
-  "name": "patrickcurl/laratables",
+  "name": "startupwrench/laratables",
   "type": "library",
   "description": "A package to easily transform your Eloquent models into JSON to be used by Datatables 1.10+.",
   "keywords": ["datatables", "laravel", "eloquent"],
-  "homepage": "https://github.com/patrickcurl/laratables",
+  "homepage": "https://github.com/startupwrench/laratables",
   "license": "MIT",
   "authors": [
     {

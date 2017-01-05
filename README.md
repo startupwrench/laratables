@@ -9,7 +9,7 @@ Add the following to your `composer.json` file.
 
 ```
 require {
-	"patrickcurl/laratables": "dev-master"
+	"startupwrench/laratables": "dev-master"
 }
 ```
 
@@ -17,11 +17,11 @@ Run `composer install`.
 
 Open `app/config/app.php` and add:
 
-`Laratables\LaratablesServiceProvider::class,`
+`Startupwrench\Laratables\LaratablesServiceProvider::class,`
 
 Also add the alias:
 
-`'Laratables'      => Laratables\LaratablesFacade::class,`
+`'Laratables'      => Startupwrench\Laratables\LaratablesFacade::class,`
 
 And publish the configuration from the command line:
 
