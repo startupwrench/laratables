@@ -341,11 +341,13 @@ class Laratables
      */
     protected function sort()
     {
-        $column = $this->columns[$this->request->get("order")[0]["column"]];
-        $direction = $this->request->get("order")[0]["dir"];
-
-        if ($column->orderable) {
-            $this->query()->orderBy($column->name, $direction);
+        if(!empty($this->request->get("order"))){
+            $column = $this->columns[$this->request->get("order")[0]["column"]];
+            $direction = $this->request->get("order")[0]["dir"];
+        
+            if ($column->orderable) {
+                $this->query()->orderBy($column->name, $direction);
+            }
         }
     }
 
