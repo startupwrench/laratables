@@ -1,6 +1,6 @@
 <?php
 
-namespace Ymo\Laratables\Columns;
+namespace Laratables\Columns;
 
 /**
  * This file is part of Laratables,
